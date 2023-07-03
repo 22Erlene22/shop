@@ -1,0 +1,30 @@
+<template>
+  <div class="footer">&copy;<span id="year"> </span><span> ABOBA. Нюхай беброчку.</span></div>
+</template>
+
+<script>
+
+</script>
+
+<style>
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: purple;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  height: 100px;
+}
+</style>
