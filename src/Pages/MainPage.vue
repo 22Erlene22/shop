@@ -12,9 +12,6 @@
   </div>
   <div class="item">
     <TheCarousel/>
-      <section class="sl-3" v-for="item in items" :key="item">
-        <p>{{ item }}</p>
-      </section>
   </div>
 </vue-scroll-snap>
 </template>
@@ -22,7 +19,6 @@
 <script>
 import VueScrollSnap from "vue-scroll-snap";
 import TheCarousel from '@/components/TheCarousel.vue';
-import { mapState } from 'vuex'
 
 export default {
   name: 'MainPage',
@@ -30,9 +26,6 @@ export default {
     VueScrollSnap,
     TheCarousel,
   },
-  computed: {
-    ...mapState(['items'])
-  }
 }
 </script>
 
@@ -73,12 +66,5 @@ export default {
   }
   .sl-2 {
     color: aliceblue;
-  }
-  .sl-3 {
-    color: aliceblue;
-    height: 50%;
-    display: inline-flex;
-    scroll-snap-align: start;
-    justify-content: center;
   }
 </style>
