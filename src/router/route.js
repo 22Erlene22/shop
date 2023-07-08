@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const Main = () => import('@/components/MainPage')
-const About = () => import('@/components/TheAbout')
-const Contact = () => import('@/components/TheContacts')
+const Main = () => import('@/Pages/MainPage')
+const About = () => import('@/Pages/TheAbout')
+const Contact = () => import('@/Pages/TheContacts')
 
 export default [
     {
