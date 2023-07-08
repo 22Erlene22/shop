@@ -2,19 +2,19 @@
 <nav>
   <div class="navbar">
     <div class="container nav-container">
-        <input class="checkbox" type="checkbox" name="" id="" />
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>  
+      <input class="checkbox" type="checkbox" name="" id="" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>  
       <div class="logo">
         <h1>ABOBA</h1>
       </div>
-      <div class="menu-items">
-        <li @click="$router.push('/')">main</li>
-        <li @click="$router.push('/about')">about</li>
-        <li @click="$router.push('/contact')">contact</li>
+      <div class="menu-items" @click="closeMenu()">
+        <router-link to="/">main</router-link>
+        <router-link to="/about">about</router-link>
+        <router-link to="/contact">contact</router-link>
       </div>
     </div>
   </div>
@@ -23,16 +23,19 @@
 
 <script>
   export default {
-    name: 'TheHeader',
-  }
+  name: 'TheHeader',
+  methods: {
+    closeMenu() {
+      const checkbox = document.querySelector('.checkbox');
+      if (checkbox) {
+        checkbox.checked = false;
+      }
+    },
+  },
+};
 </script>
 
 <style>
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .container {
   max-width: 1920px;
   width: 100%;
@@ -48,11 +51,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 62px;
+  height: 60px;
 }
 
 .navbar .menu-items {
   display: flex;
+  background: #188ccf;
 }
 
 .navbar .nav-container li {
@@ -84,7 +88,7 @@
   width: 32px;
   top: 20px;
   left: 20px;
-  z-index: 5;
+  z-index: 10;
   opacity: 0;
   cursor: pointer;
 }
@@ -96,7 +100,7 @@
   position: absolute;
   top: 17px;
   left: 20px;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -125,6 +129,7 @@
 }
 
 .navbar .menu-items {
+  position: absolute;
   padding-top: 120px;
   box-shadow: inset 0 0 2000px rgba(196, 10, 10, 0.5);
   height: 100vh;
@@ -136,6 +141,7 @@
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
   text-align: center;
+  z-index: 4;
 }
 
 .navbar .menu-items li {
@@ -169,6 +175,6 @@
 }
 
 .nav-container input[type="checkbox"]:checked ~ .logo{
-  display: none;
+  display:flex;
 }
 </style>
