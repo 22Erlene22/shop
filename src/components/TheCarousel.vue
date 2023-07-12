@@ -1,16 +1,21 @@
 <template>
-  <div class="item">
+  <!-- <div class="item">
     <Carousel :visible-slides="3" :step="2" :infinite="true">
       <slide v-for="item in items" :key="item.id">
-        {{ item.name }}
-  </slide>
+        <div class="click">
+          <span>
+            {{ item.name }}
+            *ПЕРЕДЕЛАТЬ НАХУЙ
+          </span>
+          <img :src="require(`@/assets/StoreItems/${item.img}`)">
+        </div>
+      </slide>
   </Carousel>
     <!-- <section class="sl-3" v-for="item in items" :key="item">
       <p>{{ item.name }}</p>
     </section> -->
-  </div>
+  </div> -->
 </template>
-
 <script>
 import {Carousel, Slide} from 'vue-snap'
 import { mapState } from 'vuex'

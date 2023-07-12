@@ -23,7 +23,7 @@
 
 .vs-carousel__slide {
   flex: 0 0 33.33%;
-  height: 5vw;
+  height: 250px;
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
@@ -47,9 +47,13 @@
 }
 
 .vs-carousel__arrows--left {
+  position: absolute;
+  z-index: 1000;
   left: 0;
 }
 
 .vs-carousel__arrows--right {
+  position: absolute;
+  z-index: 1000;
   right: 0;
 }

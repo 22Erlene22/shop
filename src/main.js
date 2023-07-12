@@ -3,7 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 import route from './router/route'
-import store from './store/CarouselItems'
+import store from './store/carouselItems.module'
 
 Vue.config.productionTip = false
 Vue.use('VueRouter')
