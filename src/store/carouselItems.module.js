@@ -19,7 +19,7 @@ const store = new Vuex.Store({
   },
   getters: {
     computedItems() {
-      return this.items;
+      return store.items;
     },
   }
   });
