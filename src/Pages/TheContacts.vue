@@ -1,11 +1,9 @@
-<template>
-<div>
-  <p>текст с инфой адреса</p>
-  <div>
-  </div>
-  <p style="position: absolute; right: 0;">карта о_0</p>
-  <p>доп инфа</p>
-</div>  
+<template lang='pug'>
+div
+  p текст с инфой адреса
+    div
+      p(style="position: absolute; right: 0;") карта о_0
+      p доп инфа
 </template>
 
 <script>

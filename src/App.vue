@@ -1,9 +1,8 @@
-<template>
-<div id="App">
-  <Header></Header>
-  <router-view/>
-  <Footer></Footer>
-</div>
+<template lang='pug'>
+div( id="App")
+  Header
+  router-view
+  Footer
 </template>
 
 <script>
@@ -17,3 +16,9 @@ export default {
   }
 }
 </script>
+
+<style>
+::-webkit-scrollbar {
+  width: 0;
+}
+</style>

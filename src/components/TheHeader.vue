@@ -1,24 +1,18 @@
-<template>
-<nav>
-  <div class="navbar">
-    <div class="container nav-container">
-      <input class="checkbox" type="checkbox" name="" id="" />
-      <div class="hamburger-lines">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
-      </div>  
-      <div class="logo">
-        <h1>ABOBA</h1>
-      </div>
-      <div class="menu-items" @click="closeMenu()">
-        <router-link to="/">main</router-link>
-        <router-link to="/about">about</router-link>
-        <router-link to="/contact">contact</router-link>
-      </div>
-    </div>
-  </div>
-</nav>
+<template lang='pug'>
+nav
+  div( class="navbar")
+    div( class="container nav-container")
+      input( class="checkbox" type="checkbox" name="" id="")
+      div( class="hamburger-lines")
+        span( class="line line1")
+        span( class="line line2")
+        span( class="line line3")
+      div(class="logo")
+        h1 ABOBA
+      div(class="menu-items" @click="closeMenu()")
+        router-link(to="/") main
+        router-link(to="/about") about
+        router-link(to="/contact") contact
 </template>
 
 <script>
@@ -111,7 +105,7 @@
   height: 4px;
   width: 100%;
   border-radius: 10px;
-  background: #0e2431;
+  background: #ffffff;
 }
 
 .nav-container .hamburger-lines .line1 {

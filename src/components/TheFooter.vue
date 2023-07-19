@@ -1,5 +1,7 @@
-<template>
-  <div class="footer">&copy;<span id="year"> </span><span> ABOBA. Нюхай беброчку.</span></div>
+<template lang='pug'>
+  div( class="footer")
+    span 2023
+    span ABOBA. Нюхай беброчку.
 </template>
 
 <script>

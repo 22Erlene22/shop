@@ -1,33 +1,31 @@
-<template>
-  <div class="item">
-    <hooper :settings="hooperSettings">
-    <slide v-for="item in items" :key="item"> {{ item.name }}
-    <img :src="require(`@/assets/${item.img}`)"/>
-    </slide>
-  </hooper> 
-    <!-- <section class="sl-3" v-for="item in items" :key="item">
-      <p>{{ item.name }}</p>
-    </section> -->
-  </div>
+<template lang="pug">
+div.carousel
+  hooper(:settings="hooperSettings")
+    slide.item(v-for="item in items" :key="item.id")
+      CarouselItem(:item='item' :URL='item.img')
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import "hooper/dist/hooper.css"
 import { Hooper, Slide } from "hooper"
+import CarouselItem from './CarouselItem.vue'
 
 export default {
   name:"TheCarousel",
   data() {
     return {
       hooperSettings: {
-      itemsToShow: 2,
+      itemsToShow: 3,
+      infiniteScroll: true,
+      keysControl:true,
       }
     }
   },
   components: {
     Hooper,
-    Slide
+    Slide,
+    CarouselItem
   },
   computed: {
     ...mapState(['items'])
@@ -37,12 +35,25 @@ export default {
 
 <style>
 /* @import '../assets/carousel.css'; */
-
-.hooper {
-  height: 50%;
-  width: 600px;
+/* .img {
+  width: 10%;
+  height: auto;
+} */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: auto;
 }
-.np-slider {
+/* .item {
+  width: 100%;
+  height: 30%;
+} */
+.hooper {
+  height: 500px;
+}
+/* .np-slider {
   border: 10px solid #000000;
   color: #ffffff;
   padding: 24px;
@@ -51,5 +62,5 @@ export default {
   width: 800px;
   text-shadow: 1px 1px 2px #000000;
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 </style>

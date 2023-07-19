@@ -1,24 +1,16 @@
-<template>
-<vue-scroll-snap :fullscreen="true">
-  <div class="item">
-    <section class="sl-1">
-      Компания ABOBA - производитель компонентов для вашей печки.
-    </section>
-  </div>
-  <div class="item">
-    <section class="sl-2">
-      Занимаемся произвоством с 2007 года. Закончены 100+ контрактов и продолжаем работу
-    </section>
-  </div>
-  <div class="item">
-    <TheCarousel/>
-  </div>
-</vue-scroll-snap>
+<template lang='pug'>
+vue-scroll-snap( :fullscreen="true")
+  div( class="item")
+    section( class="sl-1") Компания ABOBA - производитель компонентов для вашей печки.
+  div(class="item")
+    section(class="sl-2") Занимаемся произвоством с 2007 года. Закончены 100+ контрактов и продолжаем работу
+  div(class="item")
+    TheCarousel
 </template>
 
 <script>
 import VueScrollSnap from "vue-scroll-snap";
-import TheCarousel from '@/components/TheCarousel.vue';
+import TheCarousel from '@/components/Carousel/TheCarousel.vue';
 
 export default {
   name: 'MainPage',
@@ -41,7 +33,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3vw;
+    font-size: 2vw;
   }
   
   .scroll-snap-container {
