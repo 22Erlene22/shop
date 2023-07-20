@@ -1,12 +1,15 @@
 <template lang="pug">
-div  
+div
   div.kaka
-    
+
     span {{item.name}}
     
-    img(width="50%" height="auto" :src="require(`@/assets/${URL}`)")
+    img(width="50%" height="auto" :src="require(`@/assets/photoCarousel/${URL}`)")
     
     button.btn(@click='openForm') Подробнее о {{item.placename}}
+
+    div.overlay(v-if="showForm" @click="closeForm")
+    InfoForm(v-if="showForm" @closeForm="closeForm" :img="URL")
 
 </template>
 
@@ -17,11 +20,22 @@ export default {
     InfoForm
   },
 
-  props: ['item', 'URL'],
+  props: ['item', 'URL',],
+
+  data() {
+    return {
+      showForm: false // Флаг для отображения диалогового окна
+    };
+  },
 
   methods: {
+    openForm() {
+      this.showForm = true; // При клике на кнопку отображаем диалоговое окно
+    },
+    closeForm() {
+      this.showForm = false; // Метод для закрытия диалогового окна из дочернего компонента InfoForm
+    }
   }
-
 }
 </script>
 
@@ -45,10 +59,18 @@ export default {
   align-items: center;
   background: rgb(118, 185, 0);
   margin: 0 15px;
-  min-height: 190px;
-  min-width: 190px;
+  min-height: 195px;
 }
 span {
-  top: 5px
+  top: 5%
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
 }
 </style>

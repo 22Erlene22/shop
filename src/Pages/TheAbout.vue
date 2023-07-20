@@ -1,68 +1,84 @@
 <template lang='pug'>
-  vue-scroll-snap( :fullscreen="true")
-    div( class="item")
-      div( class="text")
-        span Добро пожаловать в компанию ABOBA — ведущего производителя компонентов для компьютеров!
-        span Мы предлагаем широкий спектр высококачественных продуктов, которые позволят вам создать мощную и надежную систему для работы, игр или творчества.
-        span Наш опыт и инновационный подход к разработке компонентов помогают нам оставаться впереди конкурентов, а наша цель — обеспечить вас самыми передовыми технологиями для ваших компьютерных потребностей.
-      
-      div( class="text")
-        span Наши компоненты являются результатом тщательно спланированных исследований и разработок.
-        span Мы используем передовые технологии и инженерные решения, чтобы создавать продукты, которые соответствуют самым высоким стандартам качества и производительности.
-        span Наша команда опытных инженеров и профессионалов стремится к инновациям, чтобы предложить вам компоненты, которые превзойдут ваши ожидания и помогут вам достичь максимальных результатов.
-      
-      div( class="text")
-        span Наш ассортимент включает в себя широкий выбор компонентов для компьютеров, в том числе процессоры, графические карты, материнские платы, оперативную память, накопители и многое другое.
-        span Независимо от того, являетесь ли вы геймером, профессиональным дизайнером или просто ищете надежные компоненты для повседневного использования, у нас есть решения, которые подойдут именно вам.
-        span Мы стремимся предложить вам лучшее соотношение цены и качества, чтобы вы могли получить максимум от вашего компьютера.
-      
-      div( class="text")
-        span Мы гордимся своей репутацией надежного поставщика компонентов для компьютеров.
-        span Наша компания имеет множество довольных клиентов, которые оценивают нашу продукцию за ее производительность, надежность и инновационные возможности.
-        span Мы стремимся устанавливать долгосрочные партнерские отношения с нашими клиентами, предлагая им не только отличные продукты, но и высокий уровень обслуживания.
-        span Если вы ищете компоненты для компьютеров, на которые можно положиться, обратитесь к нам — мы готовы помочь вам создать идеальную систему, отвечающую вашим требованиям.
+  vue-scroll-snap(:fullscreen="true")
+    div(class="item")
+      div(class="text-grid")
+        div(class="text")
+          span Мы предлагаем широкий спектр высококачественных продуктов, которые позволят вам создать мощную и надежную систему для работы, игр или творчества.
+        div(class="text")
+          span Мы используем передовые технологии и инженерные решения, чтобы создавать продукты, которые соответствуют самым высоким стандартам качества и производительности.
+        div(class="text")
+          span Наша команда опытных инженеров и профессионалов стремится к инновациям, чтобы предложить вам компоненты, которые превзойдут ваши ожидания и помогут вам достичь максимальных результатов.
+        div(class="text")
+          span Мы стремимся предложить вам лучшее соотношение цены и качества, чтобы вы могли получить максимум от вашего компьютера.
+        div(class="text")
+          span Мы стремимся устанавливать долгосрочные партнерские отношения с нашими клиентами, предлагая им не только отличные продукты, но и высокий уровень обслуживания.
+        div(class="text")
+          span Если вы ищете компоненты для компьютеров, на которые можно положиться, обратитесь к нам — мы готовы помочь вам создать идеальную систему, отвечающую вашим требованиям.
 
-    div( class="item")
+    div(class="item")
       section здесь фото с гор. скроллом (сотрудники мб)
-  </template>
-  
-  <script>
-  import VueScrollSnap from "vue-scroll-snap";
-  
-  export default {
-    name: 'TheAbout',
-    components: {
-      VueScrollSnap,
-    }
+</template>
+
+<script>
+import VueScrollSnap from "vue-scroll-snap";
+
+export default {
+  name: 'TheAbout',
+  components: {
+    VueScrollSnap,
   }
-  </script>
-  
-  <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  .item {
-      min-height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #797878;
-    }
-  
-    .text {
-      color: aliceblue;
-      font-size: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgb(216, 113, 130);
-      border-radius: 5px;
-    }
-    .scroll-snap-container {
-      height: 500px;
-      width: auto;
-    }
-  </style>
+}
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.item {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #797878;
+}
+
+.item:first-child {
+  background-image: url(../assets/sl-1.jpg);
+}
+
+.item:nth-child(2) {
+  background-image: url(../assets/sl-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.text {
+  color: aliceblue;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(216, 113, 130);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.scroll-snap-container {
+  height: 500px;
+  width: auto;
+}
+</style>
